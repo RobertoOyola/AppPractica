@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="AppPractica.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:AppPractica"
+    xmlns:views="clr-namespace:AppPractica.Views"
+    xmlns:models="clr-namespace:AppPractica.Models"
+    xmlns:vm="clr-namespace:AppPractica.ViewModels"
+    Shell.FlyoutBehavior="Disabled"
+    Title="AppPractica">
+
+    <Shell.FlyoutHeader>
+        <Grid Padding="10"
+              BackgroundColor="{StaticResource Abadl1}">
+            <Image Source="char-eevee.png"
+                   Aspect="AspectFit"
+                   BackgroundColor="{StaticResource Abad1}"
+                   WidthRequest="200"
+                   HeightRequest="200"
+                   HorizontalOptions="Center"
+                   VerticalOptions="End" />
+        </Grid>
+    </Shell.FlyoutHeader>
+
+    <FlyoutItem Title="Inicio"
+                Icon="appicon.png">
+        <ShellContent Title="Login"
+                      ContentTemplate="{DataTemplate views:LoginView}"
+                      Route="LoginView"/>
+        <Tab Title="Inicio"
+             Icon="appicon.png"
+             Route="inicio">
+            <ShellContent Title="Home"
+                          ContentTemplate="{DataTemplate views:HomeView}"
+                          Route="Homeview" />
+        </Tab>
+    </FlyoutItem>
+
+    <MenuItem Text="Nuestra Web"
+              Clicked="MenuItem_Clicked" />
+
+    <Shell.FlyoutFooter>
+        <HorizontalStackLayout VerticalOptions="Center"
+                               HorizontalOptions="Center"
+                               Spacing="5"
+                               Padding="5">
+            <HorizontalStackLayout.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"
+                                      NumberOfTapsRequired="2" />
+            </HorizontalStackLayout.GestureRecognizers>
+            <Image Source="dotnet_bot.png"
+                   Aspect="AspectFit"
+                   WidthRequest="32"
+                   HeightRequest="32" />
+            <Label Text="Desarrollado por ILUM S.A."
+                   HorizontalOptions="Center"
+                   VerticalOptions="End"
+                   FontSize="Small" />
+        </HorizontalStackLayout>
+    </Shell.FlyoutFooter>
+    
+    
+
+</Shell>
