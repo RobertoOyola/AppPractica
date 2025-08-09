@@ -1,4 +1,6 @@
-﻿using CommunityToolkit.Maui;
+﻿using AppPractica.ViewModels;
+using AppPractica.Views;
+using CommunityToolkit.Maui;
 using Microsoft.Extensions.Logging;
 
 namespace AppPractica
@@ -17,8 +19,15 @@ namespace AppPractica
                     fonts.AddFont("Roboto-Regular.ttf", "Roboto");
                 }).UseMauiCommunityToolkit();
 
+            builder.Services.AddSingleton<LoginViewModel>();
+            builder.Services.AddTransient<HojaRutaViewModel>();
+            builder.Services.AddTransient<HomeViewModel>();
+            builder.Services.AddTransient<DetalleView>();
+            builder.Services.AddTransient<LoginView>();
+            builder.Services.AddTransient<HomeView>();
+
 #if DEBUG
-    		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
 
             return builder.Build();

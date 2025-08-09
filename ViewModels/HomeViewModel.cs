@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AppPractica.ViewModels
 {
-    internal class HomeViewModel
+    public class HomeViewModel
     {
     }
 }

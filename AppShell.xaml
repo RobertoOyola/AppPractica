@@ -12,10 +12,10 @@
 
     <Shell.FlyoutHeader>
         <Grid Padding="10"
-              BackgroundColor="{StaticResource Abadl1}">
+              BackgroundColor="{StaticResource Color1}">
             <Image Source="char-eevee.png"
                    Aspect="AspectFit"
-                   BackgroundColor="{StaticResource Abad1}"
+                   BackgroundColor="{StaticResource Color1}"
                    WidthRequest="200"
                    HeightRequest="200"
                    HorizontalOptions="Center"
